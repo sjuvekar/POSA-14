@@ -38,7 +38,10 @@
         </activity>
         
         <!-- THIS IS THE CREATION ACTIVITY -->
-        <activity android:name="edu.vuum.mocca.ui.CreateStoryActivity" >
+        <!-- Story creation activity should only accept intents from other activitiy that has -->
+        <!-- ACCESS_FINE_LOCATION permission. Hence android:permission line in activity -->
+        <activity android:name="edu.vuum.mocca.ui.CreateStoryActivity"
+            android:permission="android.permission.ACCESS_FINE_LOCATION">
         </activity>
         
         <!-- THIS IS THE SINGLE VIEW ACTIVITY -->
@@ -50,9 +53,12 @@
         </activity>
         
         <!-- THIS IS THE SOUND RECORD ACTIVITY -->
+        <!-- Sound record activity should only accept intents from other activitiy that has -->
+        <!-- RECORD_AUDIO permission. Hence android:permission line in activity -->
         <activity
             android:name="edu.vuum.mocca.ui.SoundRecordActivity"
-            android:label="@string/title_activity_sound_record">
+            android:label="@string/title_activity_sound_record"
+            android:permission="android.permission.RECORD_AUDIO" >
             <intent-filter> 										<!-- Line 56 -->
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
             </intent-filter>
